@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import logo from "../assets/images/logo.svg";
 import { UserRound, Search, Sun, ChevronDown, Menu } from "lucide-react";
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function Navbar() {
   const navigationItems = [
@@ -10,13 +11,7 @@ export default function Navbar() {
     { label: "שירות לקוחות", link: "/" },
   ];
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1200);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isMobile = useIsMobile(1200);
 
   return (
     <>
