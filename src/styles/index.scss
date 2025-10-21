@@ -28,6 +28,29 @@ $font-family: "Assistant", sans-serif;
   }
 }
 
+// Reusable button mixin used by navbar and gallery buttons
+@mixin button-style(
+  $bg: $secondary-color,
+  $color: #fff,
+  $padding: 0.6rem 1rem,
+  $gap: 0.5rem
+) {
+  display: inline-flex;
+  align-items: center;
+  gap: $gap;
+  background: $bg;
+  color: $color;
+  text-decoration: none;
+  font-weight: 600;
+  padding: $padding;
+  transition: filter 0.25s ease, transform 0.15s ease;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -56,3 +79,4 @@ body {
 @import "./navbar.scss";
 @import "./carousel.scss";
 @import "./branches.scss";
+@import "./gallery.scss";

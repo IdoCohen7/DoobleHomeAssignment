@@ -1,10 +1,7 @@
 .branches-container {
   padding-top: 45px;
-  background-color: linear-gradient(
-    180deg,
-    #f0eef4 0%,
-    rgba(255, 255, 255, 0) 360px
-  );
+  background: linear-gradient(180deg, #f0eef4 0%, rgba(255, 255, 255, 0) 360px);
+  background-repeat: no-repeat;
 }
 
 .branches-header {
@@ -33,10 +30,28 @@
 
   img {
     width: 100%;
-    height: 400px;
+    height: 409px;
     object-fit: cover;
     object-position: center center;
     display: block;
+    transition: transform 0.35s ease;
+    will-change: transform;
+  }
+
+  /* overlay that tints the image on hover using the primary color */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0); /* start transparent */
+    pointer-events: none;
+    transition: background 0.25s ease;
+    z-index: 1;
+  }
+
+  &:hover::after {
+    /* stronger tint using the project primary color */
+    background: rgba($primary-color, 0.8);
   }
 }
 
@@ -45,6 +60,8 @@
   direction: rtl;
   text-align: right;
   padding-inline-start: 45px;
+  z-index: 2; /* keep text above the overlay */
+  transition: color 0.25s ease;
 
   &::before {
     content: "";
@@ -67,4 +84,9 @@
   font-weight: 700;
   @include nav-link($size: 24px, $weight: 700, $mx: 0);
   padding-bottom: 45px;
+  transition: color 0.25s ease; /* animate color on hover */
+}
+
+.branch-item:hover .branch-text h3 {
+  color: #fff; /* turn h3 white when hovering the branch card */
 }
