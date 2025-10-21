@@ -1,0 +1,52 @@
+$primary-color: #452a7a; // purple
+$secondary-color: #0ab285; // green
+$font-family: "Assistant", sans-serif;
+
+// Mixins
+@mixin nav-link($color: $primary-color, $size: 21px, $weight: 700, $mx: 15px) {
+  color: $color;
+  font-family: $font-family;
+  text-decoration: none;
+  margin: 0 $mx;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin icon-button($padding: 0.8rem) {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  color: $primary-color;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  height: 100%;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+// Import component styles
+@import "./navbar.scss";
