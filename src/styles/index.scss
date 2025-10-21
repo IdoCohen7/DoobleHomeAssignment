@@ -41,12 +41,17 @@ body {
   padding: 0;
   font-family: $font-family;
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #root {
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 100vh;
 }
 
 // Import component styles
 @import "./navbar.scss";
+@import "./carousel.scss";
