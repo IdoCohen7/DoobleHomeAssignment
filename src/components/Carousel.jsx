@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PauseCircle } from "lucide-react";
-import Field from "../assets/images/field.png";
-import LaptopLady from "../assets/images/laptopLady.jpg";
-import BushMan from "../assets/images/bushMan.jpg";
-import AgricultureLogo from "../assets/images/israeliAgriculture.png";
-
+import AgricultureLogo from "../assets/images/carousel/israeliAgriculture.png";
 export default function Carousel(props) {
   const { carouselItems } = props;
 

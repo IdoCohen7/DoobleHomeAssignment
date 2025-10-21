@@ -1,9 +1,27 @@
 import React from "react";
+import Oranges from "../assets/images/branches/oranges.png";
+export default function Branches(props) {
+  const { branchItems } = props;
 
-export default function Branches() {
   return (
     <>
-      <h2>ענפים מבוטחים</h2>
+      <div className="branches-container">
+        <div className="branches-header">
+          <h2>ענפים מבוטחים</h2>
+        </div>
+        <div className="branches">
+          {branchItems.map((item, index) => (
+            <div className="branch-item" key={index}>
+              <div className="branch-text">
+                <h2>{`0${index + 1}`}</h2>
+                <h3>{item.title}</h3>
+              </div>
+
+              <img src={item.image} alt={item.title} />
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

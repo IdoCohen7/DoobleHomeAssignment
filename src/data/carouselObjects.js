@@ -1,6 +1,6 @@
-import LaptopLady from "../assets/images/laptopLady.jpg";
-import BushMan from "../assets/images/bushMan.jpg";
-import Field from "../assets/images/field.png";
+import LaptopLady from "../assets/images/carousel/laptopLady.jpg";
+import BushMan from "../assets/images/carousel/bushMan.jpg";
+import Field from "../assets/images/carousel/field.png";
 
 export const carouselObjects = [
   {
