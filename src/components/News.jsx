@@ -11,16 +11,18 @@ export default function News(props) {
 
   return (
     <>
-      <div className="news-container">
+      <section className="news-container" aria-labelledby="news-title">
         <div className="news-header">
-          <h2 className="news-title">מה חדש בקנט?</h2>
-          <a className="news-cta" href="#">
+          <h2 id="news-title" className="news-title">
+            מה חדש בקנט?
+          </h2>
+          <a className="news-cta" href="#" aria-label="מעבר לכל החדשות">
             לכל החדשות
-            <ChevronLeft size={20} strokeWidth={2.5} />
+            <ChevronLeft size={20} strokeWidth={2.5} aria-hidden="true" />
           </a>
         </div>
 
-        <section className="news-grid">
+        <div className="news-grid">
           {/* HERO */}
           <article className="news-hero">
             <img
@@ -29,12 +31,23 @@ export default function News(props) {
               alt={heroNews.title}
               loading="lazy"
               decoding="async"
+              width="600"
+              height="600"
             />
             <div className="news-hero__overlay">
-              <time className="news-hero__date">{heroNews.date}</time>
+              <time
+                className="news-hero__date"
+                dateTime={heroNews.dateObj.toISOString().split("T")[0]}
+              >
+                {heroNews.date}
+              </time>
               <h3 className="news-hero__title">{heroNews.title}</h3>
               <p className="news-hero__subtitle">{heroNews.text}</p>
-              <a className="news-hero__link" href="#">
+              <a
+                className="news-hero__link"
+                href="#"
+                aria-label={`קרא עוד על ${heroNews.title}`}
+              >
                 קרא עוד
               </a>
             </div>
@@ -50,25 +63,40 @@ export default function News(props) {
                   alt={newsItem.title}
                   loading="lazy"
                   decoding="async"
+                  width="200"
+                  height="140"
                 />
                 <div className="news-card__body">
-                  <time className="news-card__date">{newsItem.date}</time>
+                  <time
+                    className="news-card__date"
+                    dateTime={newsItem.dateObj.toISOString().split("T")[0]}
+                  >
+                    {newsItem.date}
+                  </time>
                   <h4 className="news-card__title">{newsItem.title}</h4>
                   <p className="news-card__excerpt">{newsItem.text}</p>
-                  <a className="news-card__link" href="#">
+                  <a
+                    className="news-card__link"
+                    href="#"
+                    aria-label={`קרא עוד על ${newsItem.title}`}
+                  >
                     קרא עוד
                   </a>
                 </div>
               </li>
             ))}
           </ul>
-        </section>
+        </div>
 
-        <a className="news-cta mobile-cta" href="#">
+        <a
+          className="news-cta mobile-cta"
+          href="#"
+          aria-label="מעבר לכל החדשות"
+        >
           לכל החדשות
-          <ChevronLeft size={20} strokeWidth={2.5} />
+          <ChevronLeft size={20} strokeWidth={2.5} aria-hidden="true" />
         </a>
-      </div>
+      </section>
     </>
   );
 }

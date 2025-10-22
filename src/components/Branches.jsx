@@ -5,15 +5,17 @@ export default function Branches(props) {
 
   return (
     <>
-      <div className="branches-container">
+      <section className="branches-container" aria-labelledby="branches-title">
         <div className="branches-header">
-          <h2>ענפים מבוטחים</h2>
+          <h2 id="branches-title">ענפים מבוטחים</h2>
         </div>
-        <div className="branches">
+        <div className="branches" role="list">
           {branchItems.map((item, index) => (
-            <div className="branch-item" key={index}>
+            <article className="branch-item" key={index} role="listitem">
               <div className="branch-text">
-                <h2>{`0${index + 1}`}</h2>
+                <h2 className="branch-number" aria-hidden="true">{`0${
+                  index + 1
+                }`}</h2>
                 <h3>{item.title}</h3>
               </div>
 
@@ -22,11 +24,13 @@ export default function Branches(props) {
                 alt={item.title}
                 loading="lazy"
                 decoding="async"
+                width="200"
+                height="200"
               />
-            </div>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 }

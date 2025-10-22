@@ -4,13 +4,13 @@ import { ChevronLeft } from "lucide-react";
 export default function Footer() {
   return (
     <>
-      <div className="footer-container">
+      <footer className="footer-container">
         <div className="upper-footer">
           <div className="footer-links">
             <h2 className="first-header">אנחנו פה בשבילך ונשמח לעזור!</h2>
-            <a className="help-bttn">
+            <a className="help-bttn" href="#" aria-label="צרו איתנו קשר">
               צרו איתנו קשר
-              <ChevronLeft size={20} strokeWidth={2.5} />
+              <ChevronLeft size={20} strokeWidth={2.5} aria-hidden="true" />
             </a>
             <div className="details-container">
               <div className="footer-detail">
@@ -28,27 +28,33 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="footer-links">
+          <nav className="footer-links" aria-label="מידע כללי">
             <h2>מידע כללי</h2>
             <div className="info-container">
               <div className="info-column">
-                <a>ארכיון חוזי ביטוח</a>
-                <a>פניות הציבור</a>
-                <a>הצהרת חופש המידע</a>
-                <a>אמנת שירות</a>
+                <a href="#">ארכיון חוזי ביטוח</a>
+                <a href="#">פניות הציבור</a>
+                <a href="#">הצהרת חופש המידע</a>
+                <a href="#">אמנת שירות</a>
               </div>
               <div className="info-column">
-                <a>מאגר ספקים</a>
-                <a>שירות לקוחות</a>
-                <a>מדריך שאלות ותשובות</a>
-                <a>פרסום הסדרי נגישות</a>
-                <a>מכרזים</a>
-                <a>דרושים</a>
+                <a href="#">מאגר ספקים</a>
+                <a href="#">שירות לקוחות</a>
+                <a href="#">מדריך שאלות ותשובות</a>
+                <a href="#">פרסום הסדרי נגישות</a>
+                <a href="#">מכרזים</a>
+                <a href="#">דרושים</a>
               </div>
             </div>
-          </div>
+          </nav>
           <div className="footer-links">
-            <img src={WhiteLogo} alt="Logo" loading="lazy" height={104} />
+            <img
+              src={WhiteLogo}
+              alt="לוגו קנט"
+              loading="lazy"
+              width="150"
+              height="104"
+            />
           </div>
         </div>
         <div className="lower-footer">
@@ -57,11 +63,11 @@ export default function Footer() {
               <span>
                 <span> © כל הזכויות שמורות לקנט חברה לביטוח בע"מ 2024</span>
                 <span> | </span>
-                <span>מפת אתר</span>
+                <a href="#">מפת אתר</a>
                 <span> | </span>
-                <span>תנאי שימוש ופרטיות</span>
+                <a href="#">תנאי שימוש ופרטיות</a>
                 <span> | </span>
-                <span>הצהרת נגישות</span>
+                <a href="#">הצהרת נגישות</a>
               </span>
             </div>
             <div className="dooble">
@@ -69,7 +75,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </>
   );
 }
