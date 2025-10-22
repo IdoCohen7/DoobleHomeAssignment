@@ -10,10 +10,10 @@
 
 @media (max-width: 1200px) {
   .upper-footer {
-    min-height: 800px;
-    /* switch to a reversed column so the last column (logo) appears first */
+    min-height: auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    padding: 0;
   }
 }
 
@@ -182,7 +182,71 @@
 
 .dooble {
   font-weight: bold;
-  padding-left: 190px;
+  padding-left: 270px;
+}
+
+// Mobile Footer Sections
+.footer-section {
+  padding: 30px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.mobile-logo-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.mobile-contact-section {
+  .first-header {
+    text-align: right;
+    padding-bottom: 20px;
+  }
+
+  .help-bttn {
+    display: inline-flex;
+  }
+
+  .details-container {
+    text-align: right;
+    padding-top: 10px;
+  }
+
+  .footer-detail {
+    padding-top: 15px;
+  }
+}
+
+.mobile-info-section {
+  .mobile-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+.mobile-social-section {
+  .social-media-links {
+    padding-left: 0;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer-links {
+    padding: 0;
+  }
 }
 
 .white-logo {
