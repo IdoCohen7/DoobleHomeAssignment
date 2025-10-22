@@ -1,6 +1,7 @@
 $primary-color: #452a7a; // purple
 $secondary-color: #0ab285; // green
 $font-family: "Assistant", sans-serif;
+$darker-primary-color: #3d256d;
 
 // Mixins
 @mixin nav-link($color: $primary-color, $size: 21px, $weight: 700, $mx: 15px) {
@@ -80,3 +81,5 @@ body {
 @import "./carousel.scss";
 @import "./branches.scss";
 @import "./gallery.scss";
+@import "./footer.scss";
+@import "./news.scss";

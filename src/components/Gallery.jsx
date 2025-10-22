@@ -20,13 +20,22 @@ export default function Gallery() {
         </div>
         <div className="gallery-pictures">
           <div>
-            <img className="picture-item" src={TallTrees} alt="Tall Trees" />
+            <img
+              className="picture-item"
+              src={TallTrees}
+              alt="Tall Trees"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div>
             <img
               className="picture-item"
               src={SmokeyFields}
               alt="Smokey Fields"
+              loading="lazy"
+              decoding="async"
+              width="400"
             />
           </div>
         </div>

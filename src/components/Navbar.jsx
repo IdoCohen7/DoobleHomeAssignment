@@ -17,7 +17,13 @@ export default function Navbar() {
     <>
       <header className="navbar">
         <div>
-          <img className="logo" src={logo} alt="לוגו האתר" />
+          <img
+            className="logo"
+            src={logo}
+            alt="לוגו האתר"
+            loading="eager"
+            decoding="async"
+          />
         </div>
 
         <div className="interactive">

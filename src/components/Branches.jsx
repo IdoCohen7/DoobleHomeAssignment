@@ -17,7 +17,12 @@ export default function Branches(props) {
                 <h3>{item.title}</h3>
               </div>
 
-              <img src={item.image} alt={item.title} />
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ))}
         </div>

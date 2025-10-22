@@ -72,6 +72,8 @@ export default function Carousel(props) {
                 src={AgricultureLogo}
                 alt="לוגו משרד החקלאות"
                 className="agriculture-logo"
+                loading="lazy"
+                decoding="async"
               />
               {currentItem.header && <h2>{currentItem.header}</h2>}
               {currentItem.subHeader && <h3>{currentItem.subHeader}</h3>}

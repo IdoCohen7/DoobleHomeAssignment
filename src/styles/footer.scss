@@ -1,0 +1,141 @@
+.footer-container {
+  color: #ffffff;
+}
+
+.upper-footer {
+  min-height: 524px;
+  background-color: $primary-color;
+  display: grid;
+}
+
+@media (max-width: 1200px) {
+  .upper-footer {
+    min-height: 800px;
+    /* switch to a reversed column so the last column (logo) appears first */
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+  .upper-footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-links {
+  padding-top: 70px;
+  padding-right: 250px;
+}
+
+/* Info links layout: two columns with spaced anchors */
+.info-container {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  padding-top: 20px;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-column a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 6px 0;
+  text-align: right; /* keep RTL alignment */
+}
+
+@media (max-width: 1200px) {
+  .info-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.help-bttn {
+  @include button-style(
+    $bg: $secondary-color,
+    $color: #fff,
+    $padding: 0.75rem 1.25rem
+  );
+  font-size: 19px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.first-header {
+  padding-bottom: 25px;
+}
+
+.footer-detail {
+  padding-top: 50px;
+}
+
+.lower-footer {
+  min-height: 71px;
+  background-color: $darker-primary-color;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.credits {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+
+  .credits-text {
+    padding-right: 200px;
+    span {
+      padding-left: 20px;
+    }
+  }
+
+  .dooble p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .lower-footer {
+    padding: 12px 16px;
+  }
+
+  /* Stack credits vertically on narrower screens so the credits row
+     appears first and the dooble credit appears on the second row */
+  .credits {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+
+    .credits-text {
+      text-align: center;
+      order: 1;
+      padding-right: 0; /* remove desktop spacing so content centers */
+    }
+
+    .dooble {
+      order: 2;
+      width: 100%;
+      padding-left: 0; /* reset desktop padding */
+      text-align: center; /* center the dooble text */
+    }
+  }
+}
+
+.dooble {
+  font-weight: bold;
+  padding-left: 200px;
+}
