@@ -28,11 +28,21 @@ export default function Carousel(props) {
   };
 
   const carouselHeader = (
-    <div className="carousel-header">
-      <PauseCircle size={24} strokeWidth={2.5} aria-hidden="true" />
+    <div className={`carousel-header ${isPaused ? "paused" : ""}`}>
+      <button
+        className="carousel-header-pause"
+        onClick={togglePause}
+        aria-label={isPaused ? "המשך גלילה" : "השהה גלילה"}
+      >
+        {isPaused ? (
+          <PlayCircle size={24} strokeWidth={2.5} />
+        ) : (
+          <PauseCircle size={24} strokeWidth={2.5} />
+        )}
+      </button>
       <h3>חדשות ועדכונים</h3>
       <h3 aria-hidden="true">|</h3>
-      <p>
+      <p className="carousel-header-text">
         כדי להמנע מהמתנה ממושכת במענה הטלפוני שלנו, אנחנו מזמינים אתכם לפנות
         אלינו בדיגיטל
       </p>

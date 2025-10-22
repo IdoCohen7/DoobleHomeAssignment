@@ -17,29 +17,65 @@
   align-items: center;
   gap: 8px;
   padding-right: clamp(20px, 5vw, 100px);
-  overflow-x: hidden;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
-
-  svg {
-    color: #ffffff;
-    flex-shrink: 0;
-  }
 
   h3 {
     margin: 0;
     font-size: clamp(14px, 3vw, 18px);
     font-weight: 700;
     margin-left: 20px;
+    flex-shrink: 0;
+  }
+}
+
+.carousel-header-pause {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
   }
 
-  p {
-    font-size: clamp(12px, 2.5vw, 16px);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  svg {
+    display: block;
+  }
+}
+
+.carousel-header-text {
+  font-size: clamp(12px, 2.5vw, 16px);
+  white-space: nowrap;
+  margin: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: 768px) {
+    animation: scrollText 15s linear infinite;
+  }
+
+  .carousel-header.paused & {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
