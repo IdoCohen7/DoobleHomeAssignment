@@ -1,7 +1,5 @@
 .footer-container {
   color: #ffffff;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 600px;
 }
 
 .upper-footer {
@@ -22,12 +20,13 @@
 @media (min-width: 1200px) {
   .upper-footer {
     grid-template-columns: repeat(3, 1fr);
+    padding-inline-start: 125px;
   }
 }
 
 .footer-links {
   padding-top: 70px;
-  padding-right: 200px;
+  padding-right: 70px;
 }
 
 .footer-logo-column {
