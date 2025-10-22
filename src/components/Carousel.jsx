@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { PauseCircle } from "lucide-react";
+import { PauseCircle, PlayCircle } from "lucide-react";
 import AgricultureLogo from "../assets/images/carousel/israeliAgriculture.png";
 
 export default function Carousel(props) {
   const { carouselItems } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const currentItem = carouselItems[currentIndex];
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
     }, 8000);
 
     return () => clearInterval(interval);
-  }, [carouselItems.length]);
+  }, [carouselItems.length, isPaused]);
+
+  const togglePause = () => {
+    setIsPaused(!isPaused);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
 
   const carouselHeader = (
     <div className="carousel-header">
@@ -32,6 +43,7 @@ export default function Carousel(props) {
     <>
       <div className="carousel-container">
         {carouselHeader}
+
         <div
           className="carousel"
           style={{ backgroundImage: `url(${currentItem.image})` }}
@@ -56,6 +68,34 @@ export default function Carousel(props) {
                 {currentItem.button}
               </a>
             )}
+          </div>
+          <div className="carousel-controls">
+            <button
+              className="carousel-play-pause"
+              onClick={togglePause}
+              aria-label={
+                isPaused ? "המשך הצגה אוטומטית" : "השהה הצגה אוטומטית"
+              }
+            >
+              {isPaused ? (
+                <PlayCircle size={32} strokeWidth={2} />
+              ) : (
+                <PauseCircle size={32} strokeWidth={2} />
+              )}
+            </button>
+            <div className="carousel-indicators">
+              {carouselItems.slice(0, 5).map((_, index) => (
+                <button
+                  key={index}
+                  className={`carousel-dot ${
+                    index === currentIndex ? "active" : ""
+                  }`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`עבור לשקופית ${index + 1}`}
+                  aria-current={index === currentIndex ? "true" : "false"}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

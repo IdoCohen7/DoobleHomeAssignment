@@ -38,7 +38,7 @@ export default function Gallery() {
               width="400"
               height="400"
             />
-            <div className="photographer-name">צלם: יוסי דגן</div>
+            <div className="photographer-name">צילום: בינה כהן</div>
           </div>
           <div className="picture-frame picture-frame--lower">
             <img
@@ -50,7 +50,7 @@ export default function Gallery() {
               width="400"
               height="400"
             />
-            <div className="photographer-name">צלם: דני מכליס</div>
+            <div className="photographer-name">צילום: אשר גולן</div>
           </div>
         </div>
         <div className="camera-image" aria-hidden="true">

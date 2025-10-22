@@ -1,6 +1,14 @@
+.carousel-container {
+  position: relative;
+}
+
 .carousel-header {
-  background-color: $primary-color;
-  background-image: linear-gradient(to right, #ffffff 0%, $primary-color 50%);
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(69, 42, 122, 0.9) 50%
+  );
   color: #ffffff;
   height: 48px;
   width: 100%;
@@ -10,6 +18,10 @@
   gap: 8px;
   padding-right: clamp(20px, 5vw, 100px);
   overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 
   svg {
     color: #ffffff;
@@ -105,5 +117,85 @@
 
   &:hover {
     filter: brightness(0.9);
+  }
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+    gap: 15px;
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.active {
+    background-color: $secondary-color;
+    transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.carousel-play-pause {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  color: white;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  svg {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
