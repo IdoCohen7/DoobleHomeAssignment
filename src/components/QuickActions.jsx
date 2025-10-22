@@ -27,9 +27,11 @@ export default function QuickActions({ insideCarousel = false }) {
       aria-label="שירותים מהירים"
     >
       <header className="qa-header">
-        <button className="qa-back" onClick={handleBackClick} aria-label="חזור">
-          <ChevronLeft size={24} strokeWidth={2.5} />
-        </button>
+        <button
+          className="qa-back"
+          onClick={handleBackClick}
+          aria-label="חזור"
+        ></button>
         <h3>שירותים מהירים</h3>
         <ChevronLeft size={24} strokeWidth={2.5} />
       </header>
