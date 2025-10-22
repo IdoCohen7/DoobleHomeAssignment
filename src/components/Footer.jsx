@@ -1,6 +1,14 @@
 import React from "react";
 import WhiteLogo from "../assets/images/footer/whitelogo.png";
 import { ChevronLeft } from "lucide-react";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaTelegram,
+} from "react-icons/fa";
 export default function Footer() {
   return (
     <>
@@ -47,14 +55,65 @@ export default function Footer() {
               </div>
             </div>
           </nav>
-          <div className="footer-links">
+          <div className="footer-links footer-logo-column">
             <img
               src={WhiteLogo}
+              className="white-logo"
               alt="לוגו קנט"
               loading="lazy"
               width="150"
               height="104"
             />
+            <div className="social-media-links">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebook size={24} />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
+                <FaTwitter size={24} />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={24} />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <FaYoutube size={24} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://telegram.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+              >
+                <FaTelegram size={24} />
+              </a>
+            </div>
           </div>
         </div>
         <div className="lower-footer">
