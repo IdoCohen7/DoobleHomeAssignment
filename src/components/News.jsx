@@ -1,4 +1,5 @@
 import React from "react";
+import { ChevronLeft } from "lucide-react";
 
 export default function News(props) {
   const { newsItems } = props;
@@ -15,6 +16,7 @@ export default function News(props) {
           <h2 className="news-title">מה חדש בקנט?</h2>
           <a className="news-cta" href="#">
             לכל החדשות
+            <ChevronLeft size={20} strokeWidth={2.5} />
           </a>
         </div>
 
@@ -64,6 +66,7 @@ export default function News(props) {
 
         <a className="news-cta mobile-cta" href="#">
           לכל החדשות
+          <ChevronLeft size={20} strokeWidth={2.5} />
         </a>
       </div>
     </>

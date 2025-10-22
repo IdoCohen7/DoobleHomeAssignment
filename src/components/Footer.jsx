@@ -1,5 +1,6 @@
 import React from "react";
 import WhiteLogo from "../assets/images/footer/whitelogo.png";
+import { ChevronLeft } from "lucide-react";
 export default function Footer() {
   return (
     <>
@@ -7,14 +8,24 @@ export default function Footer() {
         <div className="upper-footer">
           <div className="footer-links">
             <h2 className="first-header">אנחנו פה בשבילך ונשמח לעזור!</h2>
-            <a className="help-bttn">צרו איתנו קשר {"  >"}</a>
-            <div className="footer-detail">
-              <p>כתובת: דרך מנחם בגין 74, ת.ד 51231</p>
-              <p>תל-אביב 6721516</p>
-            </div>
-            <div className="footer-detail">
-              <p>כתובת: דרך מנחם בגין 74, ת.ד 51231</p>
-              <p>תל-אביב 6721516</p>
+            <a className="help-bttn">
+              צרו איתנו קשר
+              <ChevronLeft size={20} strokeWidth={2.5} />
+            </a>
+            <div className="details-container">
+              <div className="footer-detail">
+                <p>כתובת: דרך מנחם בגין 74, ת.ד 51231</p>
+                <p>תל-אביב 6721516</p>
+              </div>
+              <div className="footer-detail">
+                <p>טלפון: 03-6270200</p>
+              </div>
+              <div className="footer-detail">
+                <p>פקס: 03-6270206</p>
+              </div>
+              <div className="footer-detail">
+                <p>דוא"ל: kanat@kanat.co.il</p>
+              </div>
             </div>
           </div>
           <div className="footer-links">
