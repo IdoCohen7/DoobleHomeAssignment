@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Carousel from "./components/Carousel.jsx";
 import Navbar from "./components/Navbar.jsx";
+import FloatingButtons from "./components/FloatingButtons.jsx";
 import { carouselObjects } from "./data/carouselObjects.js";
 import Branches from "./components/Branches.jsx";
 import { branchObjects } from "./data/branchObjects.js";
@@ -26,6 +27,7 @@ function App() {
       <Suspense fallback={<div style={{ minHeight: "400px" }} />}>
         <Footer />
       </Suspense>
+      <FloatingButtons />
     </>
   );
 }
