@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Play } from "lucide-react";
 
 export default function News(props) {
   const { newsItems } = props;
@@ -34,6 +34,11 @@ export default function News(props) {
               width="600"
               height="600"
             />
+            {heroNews.video && (
+              <div className="news-video-icon">
+                <Play size={32} fill="black" strokeWidth={0} />
+              </div>
+            )}
             <div className="news-hero__overlay">
               <time
                 className="news-hero__date"
@@ -57,15 +62,22 @@ export default function News(props) {
           <ul className="news-list">
             {listNews.map((newsItem, index) => (
               <li className="news-card" key={index}>
-                <img
-                  className="news-card__thumb"
-                  src={newsItem.image}
-                  alt={newsItem.title}
-                  loading="lazy"
-                  decoding="async"
-                  width="200"
-                  height="140"
-                />
+                <div className="news-card__thumb-wrapper">
+                  <img
+                    className="news-card__thumb"
+                    src={newsItem.image}
+                    alt={newsItem.title}
+                    loading="lazy"
+                    decoding="async"
+                    width="200"
+                    height="140"
+                  />
+                  {newsItem.video && (
+                    <div className="news-video-icon news-video-icon--small">
+                      <Play size={24} fill="black" strokeWidth={0} />
+                    </div>
+                  )}
+                </div>
                 <div className="news-card__body">
                   <time
                     className="news-card__date"

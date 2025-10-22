@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { PauseCircle, PlayCircle } from "lucide-react";
+import { ChevronLeft, PauseCircle, PlayCircle } from "lucide-react";
 import AgricultureLogo from "../assets/images/carousel/israeliAgriculture.png";
-
+import QuickActions from "./QuickActions.jsx";
 export default function Carousel(props) {
   const { carouselItems } = props;
 
@@ -56,10 +56,20 @@ export default function Carousel(props) {
 
         <div
           className="carousel"
-          style={{ backgroundImage: `url(${currentItem.image})` }}
           role="region"
           aria-label="קרוסלת חדשות ועדכונים"
         >
+          <img
+            key={currentIndex}
+            src={currentItem.image}
+            alt={currentItem.header || "תמונת רקע של קרוסלה"}
+            className="carousel-background carousel-fade-in"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="1920"
+            height="570"
+          />
           <div className="carousel-window">
             <img
               src={AgricultureLogo}
@@ -74,9 +84,12 @@ export default function Carousel(props) {
             {currentItem.subHeader && <h3>{currentItem.subHeader}</h3>}
             {currentItem.text && <p>{currentItem.text}</p>}
             {currentItem.button && currentItem.buttonLink && (
-              <a href={currentItem.buttonLink} className="carousel-btn">
-                {currentItem.button}
-              </a>
+              <>
+                <a href={currentItem.buttonLink} className="carousel-btn">
+                  {currentItem.button}
+                  <ChevronLeft size={20} strokeWidth={2.5} aria-hidden="true" />
+                </a>
+              </>
             )}
           </div>
           <div className="carousel-controls">
@@ -107,6 +120,7 @@ export default function Carousel(props) {
               ))}
             </div>
           </div>
+          <QuickActions insideCarousel={true} />
         </div>
       </div>
     </>

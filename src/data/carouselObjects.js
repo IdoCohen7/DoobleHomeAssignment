@@ -15,7 +15,7 @@ export const carouselObjects = [
   },
   {
     image: Field,
-    header: "קנט - קרן לביטוח נזקי טבע בחקלאות בעמ",
+    header: 'קנט - קרן לביטוח נזקי טבע בחקלאות בע"מ',
     subHeader: "כי לטבע חוקים משלו",
     text: "הגן על העסק שלך עם ביטוח של קנט",
     button: "לפרטים נוספים",

@@ -2,6 +2,8 @@
   padding-top: 45px;
   background: linear-gradient(180deg, #f0eef4 0%, rgba(255, 255, 255, 0) 360px);
   background-repeat: no-repeat;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 .branches-header {
@@ -75,9 +77,13 @@
 }
 
 .branch-text h2 {
-  color: rgb(180, 180, 180);
+  color: rgb(160, 160, 160); // Improved contrast from rgb(180, 180, 180)
   font-size: 60px;
   margin: 0;
+
+  @media (max-width: 768px) {
+    padding-top: 20px;
+  }
 }
 .branch-text h3 {
   margin: 12px 0 24px;

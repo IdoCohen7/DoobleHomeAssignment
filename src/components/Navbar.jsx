@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/images/logo.svg";
-import { UserRound, Search, Sun, ChevronDown, Menu, X } from "lucide-react";
+import { UserRound, Search, Moon, ChevronDown, Menu, X } from "lucide-react";
 import useIsMobile from "../hooks/useIsMobile";
 
 export default function Navbar() {
@@ -17,14 +17,15 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="navbar">
+      <header className="navbar" role="banner">
         {isSearchOpen ? (
-          <div className="search-bar">
+          <div className="search-bar" role="search">
             <input
               type="text"
               className="search-input"
               placeholder="מה ברצונכם לחפש?"
               autoFocus
+              aria-label="שדה חיפוש"
             />
             <div className="search-actions">
               <button
@@ -45,8 +46,9 @@ export default function Navbar() {
               <img
                 className="logo"
                 src={logo}
-                alt="לוגו האתר"
+                alt="לוגו קנט"
                 loading="eager"
+                fetchpriority="high"
                 decoding="async"
               />
             </div>
@@ -56,13 +58,13 @@ export default function Navbar() {
               {isMobile ? (
                 <div className="mobile-placeholder"></div>
               ) : (
-                <div className="navigation">
+                <nav className="navigation" aria-label="תפריט ראשי">
                   {navigationItems.map((item) => (
                     <a className="nav-link" key={item.label} href={item.link}>
                       {item.label}
                     </a>
                   ))}
-                </div>
+                </nav>
               )}
               <div className="settings">
                 <div className="settings-bttns">
@@ -81,7 +83,7 @@ export default function Navbar() {
                     <Search size={24} strokeWidth={2.5} />
                   </button>
                   <button className="icon-btn" aria-label="מצב כהה">
-                    <Sun size={24} strokeWidth={2.5} />
+                    <Moon size={24} strokeWidth={2.5} />
                   </button>
                 </div>
 

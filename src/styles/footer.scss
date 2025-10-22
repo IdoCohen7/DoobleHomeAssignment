@@ -1,5 +1,7 @@
 .footer-container {
   color: #ffffff;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 .upper-footer {
@@ -60,7 +62,7 @@
 /* Info links layout: two columns with spaced anchors */
 .info-container {
   display: flex;
-  gap: 32px;
+  gap: 150px;
   align-items: flex-start;
   padding-top: 20px;
 
@@ -81,6 +83,7 @@
   text-decoration: none;
   padding: 6px 0;
   text-align: right; /* keep RTL alignment */
+  @include anchor-underline();
 }
 
 @media (max-width: 1200px) {
@@ -182,7 +185,7 @@
 
 .dooble {
   font-weight: bold;
-  padding-left: 270px;
+  padding-left: 172px;
 }
 
 // Mobile Footer Sections

@@ -17,6 +17,7 @@ export const newsObjects = [
     date: "15.08.20",
     dateObj: new Date("2020-08-15"),
     text: "לורם איפסום דולור סיט אמט קונסקטור אדיפיסינג אליט מיחוצים קלאצי",
+    video: true,
   },
   {
     image: View,

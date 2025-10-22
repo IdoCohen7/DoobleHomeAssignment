@@ -52,6 +52,34 @@ $darker-primary-color: #3d256d;
   }
 }
 
+// Animated underline for anchors on hover
+@mixin anchor-underline($color: currentColor, $height: 2px, $duration: 0.3s) {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: $height;
+    background-color: $color;
+    transition: width $duration ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// Font display optimization for faster FCP
+@font-face {
+  font-family: "Assistant";
+  font-display: swap;
+  src: local("Assistant");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -84,3 +112,4 @@ body {
 @import "./footer.scss";
 @import "./news.scss";
 @import "./floatingButtons.scss";
+@import "./quickActions.scss";
