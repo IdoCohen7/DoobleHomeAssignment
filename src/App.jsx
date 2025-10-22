@@ -6,6 +6,7 @@ import { branchObjects } from "./data/branchObjects.js";
 import Gallery from "./components/Gallery.jsx";
 import Footer from "./components/Footer.jsx";
 import News from "./components/News.jsx";
+import { newsObjects } from "./data/newsObjects.js";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Carousel carouselItems={carouselObjects} />
       <Branches branchItems={branchObjects} />
       <Gallery />
-      <News />
+      <News newsItems={newsObjects} />
       <Footer />
     </>
   );

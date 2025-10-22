@@ -1,11 +1,21 @@
 import React from "react";
 
-export default function News() {
+export default function News(props) {
+  const { newsItems } = props;
+
+  // Sort news by date (newest first) and get hero (latest) and list items
+  const sortedNews = [...newsItems].sort((a, b) => b.dateObj - a.dateObj);
+  const heroNews = sortedNews[0];
+  const listNews = sortedNews.slice(1, 4); // Get next 3 items
+
   return (
     <>
       <div className="news-container">
         <div className="news-header">
           <h2 className="news-title">מה חדש בקנט?</h2>
+          <a className="news-cta" href="#">
+            לכל החדשות
+          </a>
         </div>
 
         <section className="news-grid">
@@ -13,84 +23,46 @@ export default function News() {
           <article className="news-hero">
             <img
               className="news-hero__img"
-              src="/images/hero.jpg" /* החלף לתמונה שלך */
-              alt="דולור טיס אטמט קונסקוור לורם איפסום"
+              src={heroNews.image}
+              alt={heroNews.title}
+              loading="lazy"
+              decoding="async"
             />
             <div className="news-hero__overlay">
-              <time className="news-hero__date">22.08.20</time>
-              <h3 className="news-hero__title">
-                לורם איפסום דולור סיט אמט קונסקוור
-              </h3>
-              <p className="news-hero__subtitle">
-                קונסקוור אדיפיסינג אליט מיחוצים קלאצי
-              </p>
+              <time className="news-hero__date">{heroNews.date}</time>
+              <h3 className="news-hero__title">{heroNews.title}</h3>
+              <p className="news-hero__subtitle">{heroNews.text}</p>
               <a className="news-hero__link" href="#">
-                עוד קרא
+                קרא עוד
               </a>
             </div>
           </article>
 
           {/* LIST */}
           <ul className="news-list">
-            <li className="news-card">
-              <img
-                className="news-card__thumb"
-                src="/images/card1.jpg"
-                alt=""
-              />
-              <div className="news-card__body">
-                <time className="news-card__date">22.08.20</time>
-                <h4 className="news-card__title">
-                  נוסטי קלובר בריקנה סתום לפריק
-                </h4>
-                <p className="news-card__excerpt">
-                  לורם איפסום דולור סיט אמט קונסקוור אדיפיסינג…
-                </p>
-                <a className="news-card__link" href="#">
-                  עוד קרא
-                </a>
-              </div>
-            </li>
-
-            <li className="news-card">
-              <img
-                className="news-card__thumb"
-                src="/images/card2.jpg"
-                alt=""
-              />
-              <div className="news-card__body">
-                <time className="news-card__date">22.08.20</time>
-                <h4 className="news-card__title">
-                  גול מונפר סובריט לורם שבק יהול
-                </h4>
-                <p className="news-card__excerpt">לורם איפסום דולור סיט אמט…</p>
-                <a className="news-card__link" href="#">
-                  עוד קרא
-                </a>
-              </div>
-            </li>
-
-            <li className="news-card">
-              <img
-                className="news-card__thumb"
-                src="/images/card3.jpg"
-                alt=""
-              />
-              <div className="news-card__body">
-                <time className="news-card__date">22.08.20</time>
-                <h4 className="news-card__title">
-                  קונדימנטום קורום בלינקה נוסטי
-                </h4>
-                <p className="news-card__excerpt">לורם איפסום דולור סיט אמט…</p>
-                <a className="news-card__link" href="#">
-                  עוד קרא
-                </a>
-              </div>
-            </li>
+            {listNews.map((newsItem, index) => (
+              <li className="news-card" key={index}>
+                <img
+                  className="news-card__thumb"
+                  src={newsItem.image}
+                  alt={newsItem.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="news-card__body">
+                  <time className="news-card__date">{newsItem.date}</time>
+                  <h4 className="news-card__title">{newsItem.title}</h4>
+                  <p className="news-card__excerpt">{newsItem.text}</p>
+                  <a className="news-card__link" href="#">
+                    קרא עוד
+                  </a>
+                </div>
+              </li>
+            ))}
           </ul>
         </section>
 
-        <a className="news-cta" href="#">
+        <a className="news-cta mobile-cta" href="#">
           לכל החדשות
         </a>
       </div>
