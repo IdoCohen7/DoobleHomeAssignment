@@ -4,7 +4,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 
-  // Mobile: Standalone component - full width
   @media (max-width: 989px) {
     margin: 0;
     position: static;
@@ -14,7 +13,6 @@
     box-shadow: none;
   }
 
-  // Desktop: Inside carousel on left edge
   &--carousel {
     @media (min-width: 990px) {
       position: absolute;
@@ -100,12 +98,10 @@
   justify-content: center;
   transition: opacity 0.3s ease;
 
-  // Mobile: primary color
   @media (max-width: 989px) {
     color: $primary-color;
   }
 
-  // Desktop: primary color
   @media (min-width: 990px) {
     color: $primary-color;
   }
@@ -120,14 +116,12 @@
   margin: 0;
   padding: 0;
 
-  // Mobile: 2x2 grid with separators
   @media (max-width: 989px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
     position: relative;
 
-    // Vertical line between columns (not complete)
     &::before {
       content: "";
       position: absolute;
@@ -139,7 +133,6 @@
       transform: translateX(-50%);
     }
 
-    // Horizontal line between rows (not complete)
     &::after {
       content: "";
       position: absolute;
@@ -155,7 +148,6 @@
   li {
     position: relative;
 
-    // Desktop: separating lines (not complete)
     @media (min-width: 990px) {
       &::after {
         content: "";

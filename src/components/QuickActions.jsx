@@ -9,6 +9,10 @@ import editIcon from "../assets/images/quickActions/edit.png";
 export default function QuickActions({ insideCarousel = false }) {
   const isMobile = useIsMobile();
 
+  const handleBackClick = () => {
+    window.history.back();
+  };
+
   // Don't render if we're trying to show inside carousel on mobile
   if (insideCarousel && isMobile) return null;
 
@@ -23,7 +27,9 @@ export default function QuickActions({ insideCarousel = false }) {
       aria-label="שירותים מהירים"
     >
       <header className="qa-header">
-        <button className="qa-back" aria-label="חזור"></button>
+        <button className="qa-back" onClick={handleBackClick} aria-label="חזור">
+          <ChevronLeft size={24} strokeWidth={2.5} />
+        </button>
         <h3>שירותים מהירים</h3>
         <ChevronLeft size={24} strokeWidth={2.5} />
       </header>
